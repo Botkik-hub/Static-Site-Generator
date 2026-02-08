@@ -1,1 +1,6 @@
-python3 -m unittest discover -s src
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PYTHONPATH="${ROOT_DIR}/src${PYTHONPATH:+:${PYTHONPATH}}" \
+    python3 -m unittest discover -s "${ROOT_DIR}/src/tests"

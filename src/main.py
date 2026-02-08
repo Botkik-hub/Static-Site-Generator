@@ -1,4 +1,4 @@
-from textnode import *
+from markdown_nodes.textnode import *
 
 
 def main():

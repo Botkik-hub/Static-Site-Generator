@@ -1,4 +1,6 @@
-from htmlnode import *
+from html_nodes.htmlnode import *
+from html_nodes.leafnode import *
+from html_nodes.parentnode import *
 import unittest
 
 class TestHTMLNode(unittest.TestCase):

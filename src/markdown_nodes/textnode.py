@@ -1,12 +1,4 @@
-from enum import Enum
-
-class TextType(Enum):
-    TEXT = "text"
-    BOLD = "bold"
-    ITALIC = "italic"
-    CODE = "code"
-    TEXT_LINK = "link"
-    IMAGE_LINK = "image"
+from markdown_nodes.texttype import *
 
 class TextNode:
     def __init__(self, text, type, url = None):
