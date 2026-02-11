@@ -8,6 +8,7 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
             continue
         if delimiter not in node.text:
             result.append(node)
+            continue
         split = node.text.split(delimiter)
         if len(split) % 2 == 0:
             raise Exception(f"Invalid Markdown syntax: delimiter {delimiter} have no pair in {node.text}")
