@@ -27,3 +27,10 @@ class TestSplitDelimiter(unittest.TestCase):
             TextNode("italic block", TextType.ITALIC),
             TextNode(" word", TextType.TEXT)
         ])
+    def test_split_bold_first(self):
+        node = TextNode("**This is text with a ** _italic block_ word", TextType.TEXT)
+        new_nodes = split_nodes_delimiter([node], "**", TextType.BOLD)
+        self.assertEqual(new_nodes, [
+            TextNode("This is text with a ", TextType.BOLD),
+            TextNode(" _italic block_ word", TextType.TEXT)
+        ])

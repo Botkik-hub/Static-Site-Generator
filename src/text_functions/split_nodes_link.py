@@ -25,4 +25,4 @@ def split_nodes_link(old_nodes):
                     text_left = ''
         if text_left != '':
             result_nodes.append(TextNode(text_left, TextType.TEXT))        
-        return result_nodes
+    return result_nodes

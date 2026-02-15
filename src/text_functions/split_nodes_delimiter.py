@@ -13,6 +13,8 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
         if len(split) % 2 == 0:
             raise Exception(f"Invalid Markdown syntax: delimiter {delimiter} have no pair in {node.text}")
         is_inside = node.text.startswith(delimiter)
+        if is_inside:
+            del split[0]
         i = 0
         while i < len(split):
             if is_inside:
