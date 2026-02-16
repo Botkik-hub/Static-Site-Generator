@@ -1,0 +1,1 @@
+python3 src/main.py "Botkik-hub/Static-Site-Generator/"

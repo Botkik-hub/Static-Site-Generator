@@ -3,8 +3,8 @@ from file_manipulations.extract_title import *
 
 import os
 
-def generate_page(from_path, template_path, dest_path):
-    print(f"Generating page from {from_path} to {dest_path} using {template_path}")
+def generate_page(from_path, template_path, dest_path, basepath):
+    print(f"Generating page from {from_path} to {dest_path} using {template_path}; basepath: {basepath}")
 
     markdown = ""
     with open(from_path, 'r', encoding='utf-8') as file:
@@ -18,7 +18,7 @@ def generate_page(from_path, template_path, dest_path):
     html_string = html_node.to_html()
     
     page_title = extract_title(markdown)
-    full_page = template.replace("{{ Title }}", page_title).replace("{{ Content }}", html_string)
+    full_page = template.replace("{{ Title }}", page_title).replace("{{ Content }}", html_string).replace('href="/', f'href="/{basepath}').replace('src="/', f'src="/{basepath}')
 
     directory = os.path.dirname(dest_path)
     if not os.path.exists(directory):
