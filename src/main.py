@@ -1,15 +1,15 @@
 from file_manipulations.copy_static_to_public import *
-from file_manipulations.generate_page import *
+from file_manipulations.convert_directory import *
 
 COPY_FROM = "static/"
 COPY_TO = "public/"
-PAGE = "content/index.md"
+CONTENT = "content"
 TEMPLATE = "template.html"
-PAGE_PATH = "public/index.html"
 
 def main():
+    shutil.rmtree(COPY_TO)
     copy_static_to_public(COPY_FROM, COPY_TO)
-    generate_page(PAGE, TEMPLATE, PAGE_PATH)
+    convert_directory(CONTENT, COPY_TO, TEMPLATE)
 
 if __name__ == "__main__":
     main()
